@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduJobConnect</title>
+    <link rel="shortcut icon" type="image/png" href="images/icon/favicon.png">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script>
+        $(window).on('scroll', function(){
+            if($(window).scrollTop()){
+                $('nav').addClass('black');
+            }else {
+                $('nav').removeClass('black');
+            }
+        })
+    </script>
+</head>
+<body>
+<header id="header">
+    <nav>
+        <div class="logo"><h1>EduJobConnect</h1></div>
+        <ul>
+            <li><a class="active" href="">Home</a></li>
+            <li><a href="#courses_section">Courses</a></li>
+            <li><a href="#jobs_section">Jobs</a></li>
+            <li><a href="#about_section">About</a></li>
+            <li><a href="#contact_section">Contact</a></li>
+        </ul>
+        <div class="srch"><input type="text" class="search" placeholder="Search here..."><img src="images/search.png" alt="search" onclick="slide()"></div>
+        <a class="get-started" href="register.html">Log In / Sign Up</a>
+        <img src="images/icon/menu.png" class="menu" onclick="sideMenu(0)" alt="menu">
+    </nav>
+    <div class="head-container">
+        <div class="quote">
+            <p>Empowering Education, Connecting Careers</p>
+            <h4>EduJobConnect bridges the gap between education and employment, offering courses tailored to industry needs and connecting learners with job opportunities.</h4>
+        </div>
+        <div class="svg-image">
+            <img src="images/2517915.jpg" alt="svg">
+        </div>
+    </div>
+    <div class="side-menu" id="side-menu">
+        <div class="close" onclick="sideMenu(1)"><img src="images/icon/close.png" alt=""></div>
+        <ul>
+            <li><a href="#courses_section">Courses</a></li>
+            <li><a href="#jobs_section">Jobs</a></li>
+            <li><a href="#about_section">About</a></li>
+            <li><a href="#contact_section">Contact</a></li>
+        </ul>
+    </div>
+</header>
+
+<!-- Courses Section -->
+<div class="diffSection" id="courses_section">
+    <center><p style="font-size: 50px; padding: 100px; padding-bottom: 60px;">Explore Our Courses</p></center>
+    <div class="course">
+        <div class="course-box">
+            <img src="images/course1.jpg" alt="Course 1">
+            <div class="course-info">
+                <h4>Web Development</h4>
+                <p>Learn HTML, CSS, and JavaScript to build modern websites.</p>
+            </div>
+        </div>
+        <div class="course-box">
+            <img src="images/course2.jpg" alt="Course 2">
+            <div class="course-info">
+                <h4>Data Science</h4>
+                <p>Explore data analysis, machine learning, and big data technologies.</p>
+            </div>
+        </div>
+        <div class="course-box">
+            <img src="images/course3.avifk" alt="Course 3">
+            <div class="course-info">
+                <h4>Graphic Design</h4>
+                <p>Master Adobe Photoshop, Illustrator, and InDesign for stunning designs.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Jobs Section -->
+<div class="diffSection" id="jobs_section">
+    <center><p style="font-size: 50px; padding: 100px; padding-bottom: 60px;">Find Your Dream Job</p></center>
+    <div class="job-listings">
+        <div class="job-box">
+            <h4>Software Engineer</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>Location: New York, NY</p>
+        </div>
+        <div class="job-box">
+            <h4>Data Analyst</h4>
+            <p>Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+            <p>Location: San Francisco, CA</p>
+        </div>
+        <div class="job-box">
+            <h4>Graphic Designer</h4>
+            <p>Sed nisi. Nulla quis sem at nibh elementum imperdiet.</p>
+            <p>Location: Los Angeles, CA</p>
+        </div>
+    </div>
+</div>
+
+
+<!-- About Section -->
+<div class="diffSection" id="about_section">
+    <center><p style="font-size: 50px; padding: 100px; padding-bottom: 60px;">About EduJobConnect</p></center>
+    <div class="about-content">
+        <div class="side-image">
+            <img class="sideImage" src="images/extra/e3.jpg">
+        </div>
+        <div class="side-text">
+            <h2>Our Mission</h2>
+            <p>EduJobConnect aims to empower individuals by providing quality education and connecting them with job opportunities, fostering personal and professional growth.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Contact Section -->
+<div class="diffSection" id="contact_section">
+    <center><p style="font-size: 50px; padding: 100px; padding-bottom: 60px;">Contact Us</p></center>
+    <div class="contact-form">
+        <form action="mailto:your@email.com" method="post" enctype="text/plain">
+            <label>Name</label><br>
+            <input type="text" name="name" required="required"><br>
+            <label>Email</label><br>
+            <input type="email" name="email" required="required"><br>
+            <label>Message</label><br>
+            <textarea name="message" required="required"></textarea><br>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-container">
+        <div class="left-col">
+            <img src="images/icon/logo.png" style="width: 200px;">
+            <div class="social-media">
+                <a href="#"><img src="images/icon\fb.png"></a>
+                <a href="#"><img src="images/icon\insta.png"></a>
+                <a href="#"><img src="images/icon\tt.png"></a>
+                <a href="#"><img src="images/icon\ytube.png"></a>
+                <a href="#"><img src="images/icon\linkedin.png"></a>
+            </div><br><br>
+            <p class="rights-text">Copyright © 2024 EduJobConnect. All Rights Reserved.</p>
+        </div>
+        <div class="right-col">
+            <h1>Newsletter</h1>
+            <div class="border"></div><br>
+            <p>Stay updated with our latest courses and job listings.</p>
+            <form class="newsletter-form">
+                <input class="txtb" type="email" placeholder="Enter Your Email">
+                <input class="btn" type="submit" value="Subscribe">
+            </form>
+        </div>
+    </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
