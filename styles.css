@@ -19,7 +19,6 @@ body {
 
 header {
     height: 90vh;
-    /* background: #000; */
 }
 
 .black {
@@ -61,13 +60,13 @@ nav ul li a {
 nav ul li a:hover {
     color: #fff;
     border-radius: 5px;
-    background: #DF2771;
+    background: darkgreen;
 }
 
 .active {
     color: #fff;
     border-radius: 5px;
-    background: #DF2771;
+    background: darkgreen;
 }
 
 .srch {
@@ -95,11 +94,11 @@ nav ul li a:hover {
 .get-started {
     margin-left: 50px;
     padding: 5px 20px;
-    border: 2px solid #DF2771;
+    border: 2px solid darkgreen;
     border-radius: 20px;
     text-decoration: none;
     transition: .5s;
-    background-color: #DF2771;
+    background-color: darkgreen;
     color: #fff;
 }
 
@@ -186,7 +185,7 @@ button {
 .side-menu {
     width: 100%;
     height: 100%;
-    background: rgba(182, 33, 90, 0.993);
+    background: darkgreen;
     position: absolute;
     top: 0;
     transition: .8s;
@@ -214,7 +213,7 @@ button {
 
 .side-menu ul li:hover a {
     background: #fff;
-    color: #DF2771;
+    color: darkgreen;
 }
 
 .side-menu ul li a {
@@ -297,7 +296,7 @@ button {
     font-size: 50px;
     text-align: center;
     color: #fff;
-    background-color: #DF2771;
+    background-color: darkgreen;
 }
 
 /* Courses Section */
@@ -444,7 +443,7 @@ button {
     height: 40px;
     padding: auto;
     margin-bottom: 20px;
-    border: 1px solid #DF2771;
+    border: 1px solid darkgreen;
     border-radius: 5px;
     font-size: 16px;
     outline: none;
@@ -455,7 +454,7 @@ button {
 }
 
 .contact-form button[type="submit"] {
-    background-color: #DF2771;
+    background-color: darkgreen;
     color: #FFF;
     padding: 12px 20px;
     border: none;
@@ -470,7 +469,7 @@ button {
 }
 
 footer {
-    background: #DF2771;
+    background: darkgreen;
     color: #FFF;
     padding: 40px 0;
     text-align: center;
@@ -514,7 +513,7 @@ footer a:hover {
 .newsletter-form .txtb {
     max-width: 300px;
     height: 40px;
-    border: 1px solid #DF2771;
+    border: 1px solid darkgreen;
     border-radius: 5px;
     padding: 0 10px;
     font-size: 16px;
@@ -523,7 +522,7 @@ footer a:hover {
 
 .newsletter-form .btn {
     margin-top: 10px;
-    background-color:deeppink;
+    background-color:darkslategrey;
     color: #FFF;
     padding: 12px 20px;
     border: none;
