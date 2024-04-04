@@ -37,3 +37,13 @@ document.getElementById('registerForm').addEventListener('submit', async functio
         console.error('Error:', error);
     }
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navList = document.querySelector('nav ul');
+
+    menuToggle.addEventListener('click', function () {
+        navList.classList.toggle('open');
+    });
+});
+
