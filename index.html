@@ -101,7 +101,7 @@
     <center><p style="font-size: 50px; padding-bottom: 60px;">About EduJobConnect</p></center>
     <div class="about-content">
         <div class="side-image">
-            <img class="sideImage" src="images/extra/e3.jpg">
+            <img class="sideImage" src="images/ae7bc9f2-bd45-4e55-8e04-1d58fcf15e15.webp" alt="About Image">
         </div>
         <div class="side-text">
             <h2>Our Mission</h2>
@@ -112,24 +112,27 @@
 
 <!-- Contact Section -->
 <div class="diffSection" id="contact_section">
-    <center><p style="font-size: 50px; padding-bottom: 60px;">Contact Us</p></center>
+    <center><p class="section-title">Contact Us</p></center>
     <div class="contact-form">
         <form action="mailto:your@email.com" method="post" enctype="text/plain">
-            <label>Name</label><br>
-            <input type="text" name="name" required="required"><br>
-            <label>Email</label><br>
-            <input type="email" name="email" required="required"><br>
-            <label>Message</label><br>
-            <textarea name="message" required="required"></textarea><br>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            
             <button type="submit">Send Message</button>
         </form>
     </div>
 </div>
 
+
 <footer>
     <div class="footer-container">
         <div class="left-col">
-            <img src="images/e-logo-png-image-30.png" style="width: 30px;">
             <div class="social-media">
                 <a href="#"><img src="images/facebook.webp"></a>
                 <a href="#"><img src="images/instagram.png"></a>
@@ -149,6 +152,34 @@
         </div>
     </div>
 </footer>
-<script src="script.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const sideMenu = document.querySelector('.side-menu');
+        const closeBtn = document.querySelector('.close');
+    
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            sideMenu.classList.toggle('active');
+            document.body.style.overflow = sideMenu.classList.contains('active') ? 'hidden' : 'auto';
+        });
+    
+        closeBtn.addEventListener('click', () => {
+            menuToggle.classList.remove('active');
+            sideMenu.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+    
+        // Close menu when clicking a link
+        const menuLinks = document.querySelectorAll('.side-menu a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                sideMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+    });
+</script>
 </body>
 </html>

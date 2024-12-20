@@ -3,126 +3,330 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login and Register</title>
+    <title>Login and Register | EduJobConnect</title>
     <link rel="shortcut icon" type="image/png" href="images/e-logo-png-image-30.png">
-    <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
+        :root {
+            --primary-color: #2c5282;
+            --secondary-color: #4299e1;
+            --accent-color: #90cdf4;
+            --text-color: #2d3748;
+            --background-color: rgba(255, 255, 255, 0.95);
+        }
+
+        body {
+            min-height: 100vh;
+            background-image: linear-gradient(135deg, rgba(44, 82, 130, 0.9), rgba(66, 153, 225, 0.8)), 
+                            url(images/network-connection-background-abstract-style_23-2148875738.avif);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--text-color);
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        .page-container {
+            display: flex;
+            min-height: 100vh;
+            padding: 2rem;
+            gap: 2rem;
+        }
+
+        .left-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 2rem;
+            color: white;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
         .logo:hover {
-            cursor: pointer;
+            color: var(--accent-color);
+            transform: scale(1.05);
             text-decoration: none;
         }
 
-        .left {
-            width: 50%;
-            margin-left: 50px;
-            margin-top: 100px;
+        .welcome-text {
+            font-size: 1.5rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            animation: fadeIn 1s ease-in;
         }
-        
-        @media screen and (max-width: 600px) {
-            body {
+
+        .auth-container {
+            flex: 1;
+            max-width: 500px;
+            margin: auto;
+        }
+
+        .card {
+            background: var(--background-color);
+            border: none;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            animation: slideInRight 0.5s ease-out;
+        }
+
+        .card-body {
+            padding: 2.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-control {
+            border-radius: 0.5rem;
+            padding: 0.75rem 1rem;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.25);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .switch-form-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .switch-form-link:hover {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        /* Footer Styles */
+        .footer-container {
+            background: rgba(44, 82, 130, 0.95);
+            padding: 2rem;
+            color: white;
+            margin-top: 2rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 2rem;
+        }
+
+        .social-media {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .social-media img {
+            width: 30px;
+            height: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-media img:hover {
+            transform: scale(1.2);
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .newsletter-input {
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            border: 1px solid var(--accent-color);
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .newsletter-input::placeholder {
+            color: white;
+        }
+
+        .newsletter-button {
+            padding: 0.5rem 1.5rem;
+            background: var(--accent-color);
+            border: none;
+            border-radius: 0.25rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-button:hover {
+            background: white;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .page-container {
                 flex-direction: column;
+                padding: 1rem;
             }
 
-            .left {
+            .left-section {
+                text-align: center;
+                padding: 1rem;
+            }
+
+            .auth-container {
                 width: 100%;
-                margin-left: 0;
-                margin-top: 0;
+                padding: 1rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
                 text-align: center;
             }
 
-            .right {
-                width: 100%;
+            .social-media {
+                justify-content: center;
             }
 
-            .container {
-                width: 100%;
-                padding: 20px;
-                margin-top: 0;
+            .newsletter-form {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
             }
         }
     </style>
 </head>
-<body style="background-image: url(images/network-connection-background-abstract-style_23-2148875738.avif); background-size: cover;">
-    <div style="display: flex;">
-        <div class="left" style="text-align: center; margin-top: 10%; display: flex; flex-direction: column;">
-            <a href="index.html" class="logo" style="margin-bottom: 20px; margin-top: 20px; color: darkgreen">EduJobConnect</a>
-            <p style="color: white; font-size: 20px; font-weight: bold;">Join our community of educators and learners and begin your journey in the world of education.</p>
+<body>
+    <div class="page-container">
+        <div class="left-section">
+            <a href="index.html" class="logo animate__animated animate__fadeInDown">
+                EduJobConnect
+            </a>
+            <p class="welcome-text animate__animated animate__fadeInUp">
+                Join our vibrant community of educators and learners. Discover opportunities, 
+                share knowledge, and shape the future of education together.
+            </p>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 offset-md-3">
-                    <div class="card my-5">
-                        <div class="card-body">
-                            <div id="registerFormContainer">
-                                <h1 class="text-center">Register</h1>
-                                <form id="registerForm">
-                                    <div class="form-group">
-                                        <label for="email">Email</label>
-                                        <input type="email" class="form-control" id="email" placeholder="Enter email" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="username">Username</label>
-                                        <input type="text" class="form-control" id="username" placeholder="Enter username" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="password">Password</label>
-                                        <input type="password" class="form-control" id="password" placeholder="Enter password" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="confirmPassword">Confirm Password</label>
-                                        <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm password" required>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary btn-block">Register</button>
-                                </form>
-                                <p class="text-center mt-3">Already have an account?</p>
-                                <a href="#" id="showLoginForm">Login here</a>
+
+        <div class="auth-container">
+            <div class="card">
+                <div class="card-body">
+                    <div id="registerFormContainer">
+                        <h1 class="text-center mb-4">Create Account</h1>
+                        <form id="registerForm">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
                             </div>
-                            <div id="loginFormContainer" style="display: none;">
-                                <h1 class="text-center">Login</h1>
-                                <form id="loginForm">
-                                    <div class="form-group">
-                                        <label for="loginEmail">Email</label>
-                                        <input type="email" class="form-control" id="loginEmail" placeholder="Enter email" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="loginPassword">Password</label>
-                                        <input type="password" class="form-control" id="loginPassword" placeholder="Enter password" required>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary btn-block">Login</button>
-                                </form>
-                                <p class="text-center mt-3">Don't have an account yet?</p>
-                                <a href="#" id="showRegisterForm">Register here</a>
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control" id="username" placeholder="Choose a username" required>
                             </div>
-                        </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="password" placeholder="Create a password" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="confirmPassword">Confirm Password</label>
+                                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm your password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+                        </form>
+                        <p class="text-center mt-4">
+                            Already have an account? 
+                            <a href="#" id="showLoginForm" class="switch-form-link">Sign in</a>
+                        </p>
+                    </div>
+
+                    <div id="loginFormContainer" style="display: none;">
+                        <h1 class="text-center mb-4">Welcome Back</h1>
+                        <form id="loginForm">
+                            <div class="form-group">
+                                <label for="loginEmail">Email</label>
+                                <input type="email" class="form-control" id="loginEmail" placeholder="Enter your email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="loginPassword">Password</label>
+                                <input type="password" class="form-control" id="loginPassword" placeholder="Enter your password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                        </form>
+                        <p class="text-center mt-4">
+                            New to EduJobConnect? 
+                            <a href="#" id="showRegisterForm" class="switch-form-link">Create account</a>
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <footer>
-        <div class="footer-container">
-            <div class="left-col">
-                <img src="images/e-logo-png-image-30.png" style="width: 30px;">
+
+    <footer class="footer-container">
+        <div class="footer-content">
+            <div class="footer-left">
                 <div class="social-media">
-                    <a href="#"><img src="images/facebook.webp"></a>
-                    <a href="#"><img src="images/instagram.png"></a>
-                    <a href="#"><img src="images/Youtube.webp"></a>
-                    <a href="#"><img src="images/linkedin.png"></a>
-                </div><br><br>
-                <p class="rights-text">Copyright © 2024 EduJobConnect. All Rights Reserved.</p>
+                    <a href="#"><img src="images/facebook.webp" alt="Facebook"></a>
+                    <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
+                    <a href="#"><img src="images/Youtube.webp" alt="YouTube"></a>
+                    <a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a>
+                </div>
+                <p>&copy; 2024 EduJobConnect. All Rights Reserved.</p>
             </div>
-            <div class="right-col">
-                <h1>Newsletter</h1>
-                <div class="border"></div><br>
-                <p>Stay updated with our latest courses and job listings.</p>
+            <div class="footer-right">
+                <h3>Stay Connected</h3>
+                <p>Get updates on latest courses and job opportunities</p>
                 <form class="newsletter-form">
-                    <input class="txtb" type="email" placeholder="Enter Your Email">
-                    <input class="btn" type="submit" value="Subscribe">
+                    <input type="email" class="newsletter-input" placeholder="Enter your email">
+                    <button type="submit" class="newsletter-button">Subscribe</button>
                 </form>
             </div>
         </div>
+    </footer>
+
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
 </body>
 </html>
