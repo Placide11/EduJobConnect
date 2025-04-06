@@ -45,4 +45,4 @@ This project is licensed under the [MIT License](LICENSE). Feel free to use, mod
 
 Copyright © 2024 EduJobConnect. All Rights Reserved.
 
-For more information, visit [EduJobConnect](https://placide11.github.io/EduJobConnect/).
+For more information, visit [EduJobConnect](https://placide11.github.io/EduJobConnect/) THANK TOU!!.
